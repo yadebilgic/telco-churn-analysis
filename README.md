@@ -26,4 +26,4 @@ Below is the Multiple Correspondence Analysis factor map highlighting category c
 
 ## ✍️ Author
 **Yade İrem Bilgiç**  
-[LinkedIn Profile]([https://www.linkedin.com/in/yadebilgic](https://www.linkedin.com/in/yadeirembilgic/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B7a8oExF1RM6L5aD%2F04P5XA%3D%3D))
+[LinkedIn Profile](https://www.linkedin.com/in/yadeirembilgic/)
