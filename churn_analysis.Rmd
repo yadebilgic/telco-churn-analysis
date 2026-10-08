@@ -1,0 +1,78 @@
+---
+title: "MCA"
+author: "Yade İrem Bilgic"
+date: "2025-12-23"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+dataset <- read.csv("WA_Fn-UseC_-Telco-Customer-Churn.csv", stringsAsFactors = TRUE)
+```
+
+```{r}
+selected_vars <- c("gender", "SeniorCitizen", "PaymentMethod", 
+                   "InternetService", "Contract", "StreamingTV")
+```
+
+```{r}
+mca_data <- na.omit(dataset[, selected_vars])
+```
+
+```{r}
+mca_data$SeniorCitizen <- as.factor(mca_data$SeniorCitizen)
+```
+
+```{r}
+library(FactoMineR)
+library(factoextra)
+```
+#MCA Analizi
+```{r}
+res.mca <- MCA(mca_data, graph = FALSE)
+```
+
+#Grafik
+```{r}
+fviz_mca_var(res.mca, 
+             repel = TRUE, 
+             col.var = "cos2", 
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+             ggtheme = theme_minimal())
+```
+#Boyutların Açıklayıcılık Oranları 
+```{r}
+res.mca$eig
+```
+```{r}
+fviz_eig(res.mca, addlabels = TRUE, ylim = c(0, 25)) +
+  labs(title = "Boyutların Varyans Açıklama Oranları")
+```
+#Değişenlerin Kalitesi ve Katkısı
+```{r}
+fviz_mca_var(res.mca, col.var = "contrib",
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), 
+             repel = TRUE)
+```
+#Kategorilerin Boyutlarla İlişkisi
+```{r}
+
+res.desc <- dimdesc(res.mca, axes = c(1,2))
+
+res.desc[[1]]
+```
+#K-Means
+```{r}
+
+fviz_mca_var(res.mca, col.var = "cos2", 
+             repel = TRUE, 
+             ggtheme = theme_minimal())
+
+```
+
+
+
+
