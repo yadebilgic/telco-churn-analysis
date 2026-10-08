@@ -1,5 +1,7 @@
 # Telco Customer Churn: Categorical Data Analysis & Customer Churn Modeling
 
+📄 **[Click here to read the full Telco Churn Analysis Report (PDF)](./Telco_Churn_Analysis.pdf)**
+
 This repository contains a comprehensive categorical data analysis on the Kaggle **Telco Customer Churn** dataset ($N = 7,043$). The goal of this project is to uncover the key drivers behind customer churn using both bivariate non-parametric tests and multivariate statistical learning methodologies.
 
 
